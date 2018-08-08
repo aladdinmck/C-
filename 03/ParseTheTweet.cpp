@@ -2,8 +2,10 @@
 
 using namespace std;
 
+
+
 int main() {
-  string userMessage;
-  cin >> userMessage;
+  string userInput;
+  cin >> userInput;
   return 0;
 }
