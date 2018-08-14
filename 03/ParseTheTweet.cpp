@@ -6,7 +6,7 @@ int main() {
   string userInput;
   string delimiter = ";";
   getline(cin, userInput);
-  
+
   cout << "You entered: " << userInput << endl;
   
   size_t pos = 0;

@@ -5,7 +5,11 @@ using namespace std;
 int main() {
   string userInput;
   string delimiter = ";";
-  cin >> userInput;
+  getline(cin, userInput);
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 1a944336e0832769c8b0a46bb68d14dc7f9c6bbc
   cout << "You entered: " << userInput << endl;
   
   size_t pos = 0;
