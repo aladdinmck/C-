@@ -17,5 +17,6 @@ int main() {
     userInput.erase(0, pos + delimiter.length());
   }
   cout << userInput << endl;
+  cout << userInput << endl;
   return 0;
 }
