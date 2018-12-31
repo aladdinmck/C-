@@ -1,4 +1,5 @@
 #include <iostream>
+#include <boost/algorithm/string.hpp>
 
 using namespace std;
 
@@ -10,12 +11,14 @@ int main() {
   cout << "You entered: " << userInput << endl;
   
   size_t pos = 0;
-  string token;
+  string token = userInput.substr(0, userInput.find(delimiter));
   while ((pos = userInput.find(delimiter)) != string::npos) {
     token = userInput.substr(0, pos);
+    boost::trim(token);
     cout << token << endl;
-    userInput.erase(0, pos + delimiter.length());
+    userInput.erase(0, pos + delimiter.length()); 
   }
+  
   cout << userInput << endl;
   return 0;
-}
+} 

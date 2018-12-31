@@ -1,4 +1,7 @@
 #include <iostream>
+#include <boost/algorithm/string.hpp>
+#include <algorithm>
+#include <string>
 
 using namespace std;
 
@@ -7,16 +10,34 @@ int main() {
   string delimiter = ";";
   getline(cin, userInput);
 
-  cout << "You entered: " << userInput << endl;
-  
   size_t pos = 0;
-  string token;
+  int nCat = 1;
+  string token = userInput.substr(0, userInput.find(delimiter));
   while ((pos = userInput.find(delimiter)) != string::npos) {
     token = userInput.substr(0, pos);
-    cout << token << endl;
-    userInput.erase(0, pos + delimiter.length());
+    boost::trim(token);
+    if (nCat == 1) {
+      cout << "Type: \t\t";
+      string upperCase = token.substr(5, token.length() - 1);
+      string newUpper = boost::to_upper_copy(upperCase);   
+      cout << newUpper << endl;
+    } else if (nCat == 2) {
+      cout << "Detail: \t";
+      cout << token.substr(5, token.length() - 1) << endl;
+    } else if (nCat == 3) {
+      cout << "Location: \t";
+      cout << token.substr(5, token.length() - 1) << endl;
+    } else if (nCat == 4) {
+      cout << "Latitude: \t";
+      cout << token.substr(5, token.length() - 1) << endl;
+    } else {
+      cout << "Longitude: \t";
+      cout << token.substr(5, token.length() - 1) << endl;
+    }
+
+    userInput.erase(0, pos + delimiter.length()); 
+    nCat++;
   }
-  cout << userInput << endl;
-  cout << userInput << endl;
+  
   return 0;
-}
+} 
