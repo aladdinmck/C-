@@ -1,5 +1,5 @@
 Notes
-Hello
+
 Do this to avois any confusion
 * In order to fix the github passphrase key, do the following.
   $ eval "$(ssh-agent -s)"
