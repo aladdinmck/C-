@@ -7,39 +7,41 @@
 
 using namespace std;
 
-string getMove() {
-  
-  srand(time(0));
-  bool TESTING_MODE = false; 
-  int cycler = 0;
-  string m;
-  
-  if (TESTING_MODE) {
-    switch (cycler++ % 3) {
-    case 0: 
-      m = "rock";  
-      return m;
-    case 1: 
-      m = "paper";
-      return m;
-    default: // (case 2) 
-      m = "scissors";
-      return m;
-    }
-  } else {
-    switch (rand() % 3) {
-    case 0: 
-      m = "rock";
-      return m;
-    case 1: 
-      m = "paper";
-      return m;
-    default: // (case 2)
-      m = "scissors";
-      return m;
+class ComputerOpponent {
+  string getMove() {
+    
+    srand(time(0));
+    bool TESTING_MODE = false; 
+    int cycler = 0;
+    string m;
+    
+    if (TESTING_MODE) {
+      switch (cycler++ % 3) {
+      case 0: 
+	m = "rock";  
+	return m;
+      case 1: 
+	m = "paper";
+	return m;
+      default: // (case 2) 
+	m = "scissors";
+	return m;
+      }
+    } else {
+      switch (rand() % 3) {
+      case 0: 
+	m = "rock";
+	return m;
+      case 1: 
+	m = "paper";
+	return m;
+      default: // (case 2)
+	m = "scissors";
+	return m;
+      }
     }
   }
-}
+};
 
 int main() {  
   string s = getMove();
