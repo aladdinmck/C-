@@ -1,5 +1,9 @@
-public class RockPaperScissors {
+class RockPaperScissors {
   
   
+  
+};
+
+int main() {
   
 }
